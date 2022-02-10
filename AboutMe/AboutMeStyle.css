@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Quintessential&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quintessential&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #eee;
+}
+/****************************************************************/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: weight;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ee5281;
+  background-color: #e2e2e2;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.balls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.one {
+  background-color: #3593f0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 16px;
+}
+.two {
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 7px;
+}
+.three {
+  background-color: #f02e68;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 27px;
+}
+nav a {
+  text-decoration: none;
+}
+.ul-HC {
+  list-style: none;
+}
+.ul-HC li {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
+}
+.nav-bar {
+  font-family: "Quintessential", sans-serif;
+  font-size: 28px;
+  font-weight: 1000;
+  transition: 0.5s;
+  color: #3e9af7;
+  margin-left: 10px;
+}
+.nav-bar:hover {
+  color: blue;
+}
+.nav-link {
+  padding: 7px;
+  font-weight: 800;
+  color: #3e9bf7da;
+  font-family: "Quintessential", sans-serif;
+  border-radius: 70px;
+  transition: 0.5s;
+}
+.nav-link:hover {
+  background-color: #f02e68;
+  color: #fff;
+}
+/* ****************************************************** */
+.t-m-i {
+  text-align: center;
+}
+.title {
+  font-size: 200px;
+  font-family: "Bebas Neue";
+  color: #375dcb;
+  padding: 30px 66px;
+  text-shadow: 4px 4px 0px #ff004d;
+}
+.tasks {
+  margin: -31px 10px;
+}
+.task {
+  font-size: 50px;
+  font-family: cursive;
+  color: #3593f0;
+  font-weight: 600;
+}
+.bottoms {
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+}
+body .fa {
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 5px 15px;
+  font-size: 30px;
+  width: 50px;
+  transition: 0.5s;
+}
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-github {
+  background: #000000;
+  color: white;
+}
+.fa:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 20px 3px #000000;
+}

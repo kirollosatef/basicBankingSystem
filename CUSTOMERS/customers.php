@@ -5,15 +5,18 @@ if (!$conn =  mysqli_connect("localhost", "root", "", "bank")) {
 $query = "select * from customers";
 $result = mysqli_query($conn, $query);
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  if ($email_1 = $_POST['email1'] && $email_1 != 0 &&
-    $email_2 = $_POST['email2'] && $email_2 != 0 &&
-    $mony = $_POST['pala'] && $mony != 0
-  ) {
+  $email_1 = $_POST['email1'];
+  $email_2 = $_POST['email2'];
+  $mony = $_POST['pala'];
+  $mempala = $_POST["mempala"];
+  $memname = $_POST["memnamee"];
+  $mememail = $_POST["mememail"];
+  if ($email_1 != 0 && $email_2 != 0 && $mony != 0) {
     $sql0 = "SELECT `balance` FROM `customers` WHERE `customers` . `email` = '$email_1'";
     $do0 = mysqli_query($conn, $sql0);
     $vu = mysqli_fetch_assoc($do0);
     if ($vu['balance'] < $mony) {
-      echo " <script type='text/javascript'>alert('Error: You dont have enough money')</script>";
+      echo "<script type='text/javascript'>alert('Error: You dont have enough money')</script>";
     } else {
       $sql = "UPDATE `customers` SET `balance` = balance - $mony WHERE `customers` . `email` = '$email_1'";
       $do = mysqli_query($conn, $sql);
@@ -22,10 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       $ins = "INSERT INTO `transfers` (`id`, `from`, `to`, `balance`) VALUES (NULL, '$email_1', '$email_2', '$mony');";
       $doins = mysqli_query($conn, $ins);
     }
-  } elseif ($memname = $_POST["memnamee"] && $memname != 0 &&
-    $mememail = $_POST["mememail"] && $mememail != 0 &&
-    $mempala = $_POST["mempala"] && $mempala != 0
-  ) {
+  } elseif ($memname != 0 && $mememail != 0 && $mempala != 0) {
     $addmeem = "INSERT INTO `customers` (`id`, `name`, `email`, `balance`) VALUES (NULL, '$memname', '$mememail', '$mempala');";
     $doaddmeem = mysqli_query($conn, $addmeem);
   }
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <i class="fas fa-times" onclick="toggleLogin()">✖</i>
       </div>
       <div class="body">
-        <form action="./customers.php" class="form" method="post">
+        <form action="./customers.php" class="form" method="POST">
           <div class="p-in">
             <p>from: </p>
             <input type="email" placeholder="E-mail" name="email1" />
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="text" placeholder="palace" name="pala" />
           </div>
           <div class="footer">
-            <button type="submit">Submit<?php header("./customers.php"); ?></button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="text" placeholder="palace" name="mempala" />
           </div>
           <div class="footer">
-            <button type="submit">Submit<?php header("./customers.php"); ?></button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
@@ -140,13 +140,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
           <a class="nav-link" href="../index.html">HOME</a>
         </li>
         <li>
-          <a class="nav-link" href="../index.html">ABOUT US</a>
+          <a class="nav-link" href="../AboutMe/AboutMe.html">ABOUT US</a>
         </li>
         <li>
-          <a class="nav-link" href="../index.html">CONTACT US</a>
+          <a class="nav-link" href="mailto:kirolskiroatef.com@gmail.com">CONTACT US</a>
         </li>
         <li>
-          <a class="nav-link" href="./customers.html">CUSTOMERS</a>
+          <a class="nav-link" href="./customers.php">CUSTOMERS</a>
         </li>
       </ul>
     </div>
